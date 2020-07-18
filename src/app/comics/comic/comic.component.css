@@ -1,0 +1,17 @@
+img.mat-card-image{
+    min-height: 274px;
+    max-height: 274px;
+}
+.mat-card-title{
+    font-size: 20px;
+    height: 24px;
+    overflow: hidden;
+}
+.search-results {
+    height: 20rem;
+    overflow: scroll;
+}
+.mat-card{
+    background-color: #424e87;
+    font-size: 12px;
+}

@@ -1,0 +1,28 @@
+<div class="search">
+<p>Characters Section</p>
+<input [(ngModel)]='textoDeInput' 
+    type="text" 
+    class="form-control" 
+    placeholder=" Search by name ..." 
+    aria-label="" 
+    aria-describedby="basic-addon1">
+</div>
+<cdk-virtual-scroll-viewport itemSize="120">
+    <div fxFlex fxLayout="column">
+        <div fxLayout="row wrap">
+            <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" 
+            *cdkVirtualFor="let character of allCharacters | filter: textoDeInput" style="padding: 5px;">
+            <app-character [character]="character"></app-character>
+            </div>
+        </div>
+    </div> 
+</cdk-virtual-scroll-viewport>
+
+
+
+
+
+
+
+
+

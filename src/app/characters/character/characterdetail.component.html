@@ -1,0 +1,30 @@
+<div class="imageDetail"
+*ngFor="let character of characterDetail | async" style="padding: 5px;">
+    <div class="framework">
+        <a href="characters"><span> Back</span></a>
+        <img mat-card-image src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.title}}">      
+        <!--<p>El numero es: {{character.id}}</p>-->
+        <div class="row">
+            <div  *ngIf="character.description !== ''">
+                <mat-card-title><p>Description:</p>{{character.description}}</mat-card-title>
+            </div>
+            <div  *ngIf="character.description == ''">
+                <mat-card-title><p>Description:</p> Not available</mat-card-title>
+            </div>
+            <p>List of comics:</p>
+            <div class="comics"
+            *ngFor="let comic of characterDetailComics | async as data" style="padding: 5px;">
+                <div class="comicsList">
+                    <div class="element">
+                        <img class="thumbnail" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
+                    </div>
+                    <div class="element">{{comic.title}}</div>
+                    <div class="element">{{comic.prices[0].price}}$</div>
+                   <!--
+                       <div *ngIf="comic.creators.items[0].role == 'editor'"><p>Editor:</p>{{comic.creators.items[0].name}}</div>
+                   --> 
+                </div>
+            </div>
+        </div>       
+    </div>
+</div>

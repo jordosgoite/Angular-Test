@@ -1,0 +1,25 @@
+<div class="imageDetail"
+*ngFor="let creator of creatorDetail | async" style="padding: 5px;">
+    <div class="framework">
+        <a href="creators"><span> Back</span></a>
+        <img mat-card-image src="{{creator.thumbnail.path}}.{{creator.thumbnail.extension}}" alt="{{creator.title}}">      
+        <div class="row">
+            <mat-card-title><p>First Name:</p>  {{creator.firstName}}</mat-card-title>
+            <mat-card-title><p>Middle Name:</p> {{creator.middleName}}</mat-card-title>
+            <mat-card-title><p>Last Name:</p> {{creator.lastName}}</mat-card-title>
+            <mat-card-title><p>Full Name:</p> {{creator.fullName}}</mat-card-title>
+            <p>List of comics:</p>
+            <div class="comics"
+            *ngFor="let comic of creatorDetailComics | async" style="padding: 5px;">
+                <div class="comicsList">
+                    <div class="element">
+                        <img class="thumbnail" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
+                    </div>
+                    <div class="element">{{comic.title}}</div>
+                    <div class="element">{{comic.prices[0].price}}$</div>
+                    <!--   Falta el rol en cada comic-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

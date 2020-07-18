@@ -1,0 +1,14 @@
+
+<mat-card>
+        <img mat-card-image src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}">
+        <mat-card-title>{{character.name}}</mat-card-title>
+        <mat-card-title>Number of comics: {{character.comics.available}}</mat-card-title>
+        <mat-card-title>Number of series: {{character.series.available}}</mat-card-title>
+        <mat-card-footer>
+            <a [routerLink]="['/characters',character.id]" target="" fxFlex mat-flat-button color="primary">See more</a>
+        </mat-card-footer>
+    </mat-card>
+
+    
+
+

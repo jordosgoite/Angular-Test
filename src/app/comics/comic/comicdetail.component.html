@@ -1,0 +1,15 @@
+<div class="imageDetail"
+*ngFor="let comic of comicDetail | async" style="padding: 5px;">
+    <div class="framework">
+        <div class="row">
+            <a href="comics"><span>Back</span></a>
+            <img mat-card-image src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">      
+            <p>{{comic.title}}</p>
+            <mat-card-title><p>Description:</p>{{comic.description}}</mat-card-title>
+            <div *ngFor="let creators of comicDetail | async">
+                <p>Los creadores son:</p>{{creators.item[0].name}}
+            </div>
+        </div> 
+    </div>
+</div>
+

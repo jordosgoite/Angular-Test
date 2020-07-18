@@ -1,0 +1,42 @@
+.imageDetail img{
+    height: 545px;
+    width: 500px;
+    display: block;
+    margin: auto;
+}
+.imageDetail{
+    background-color: #424e87;
+    padding: 20px;
+    border-radius: 10px;
+}
+.framework {
+    padding: 50px;
+}
+.framework img {
+    border-radius: 10px;
+}
+.comicsList{
+    display: flex;
+    flex-direction: row;
+}
+.comics img
+{
+    display: inline-block;
+    height: 54px;
+    width: 50px;
+}
+.element {
+    padding: 10px;
+}
+.row {
+    display: flex;
+    flex-direction: column;
+    color: #141b38;
+
+}
+.row p{
+    color: #ffffff;
+}
+.framework a span{
+    color: #ffffff;
+}

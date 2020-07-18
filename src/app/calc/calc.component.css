@@ -1,0 +1,21 @@
+.row img{
+    height: 300px;
+    width: 700px;
+
+    border-radius: 10px;
+}
+.row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    height: 100vh;
+    
+}
+.container{
+    background-image: url('../../assets/background.jpg');
+    background-repeat: no-repeat;
+    border-radius: 15px;
+
+}

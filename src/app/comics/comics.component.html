@@ -1,0 +1,19 @@
+<div class="search">
+    <p>Comics Section</p>
+    <input [(ngModel)]='textoDeInput' 
+        type="text" 
+        class="form-control" 
+        placeholder=" Search by name ..." 
+        aria-label="" 
+        aria-describedby="basic-addon1">
+</div>
+<cdk-virtual-scroll-viewport itemSize="120">
+    <div fxFlex fxLayout="column">
+        <div fxLayout="row wrap">
+            <div fxFlex="25" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" fxLayout="column" 
+            *cdkVirtualFor="let comic of allComics | filter: textoDeInput" style="padding: 5px;">
+                <app-comic [comic]="comic"></app-comic>
+            </div>
+        </div>
+    </div>
+</cdk-virtual-scroll-viewport>
