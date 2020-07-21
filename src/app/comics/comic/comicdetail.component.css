@@ -15,22 +15,14 @@
 .framework img {
     border-radius: 10px;
 }
-.comicsList{
-    display: flex;
-    flex-direction: row;
-}
-.comics img
-{
-    display: inline-block;
-    height: 54px;
-    width: 50px;
-}
+
 .element {
     padding: 10px;
 }
 .row {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     color: #141b38;
 
 }
@@ -39,4 +31,39 @@
 }
 .framework a span{
     color: #ffffff;
+}
+
+.characters img
+{
+    display: block;
+    height: 154px;
+    width: 150px;
+}
+.charactersList p{
+    color: #141b38;
+}
+.charactersList{
+    margin-top: 20px;
+}
+.charactersList span{
+    color: #ffffff;
+}
+.creators img
+{
+    display: block;
+    height: 154px;
+    width: 150px;
+}
+.creatorsList p{
+    color: #141b38;
+}
+.creatorsList{
+    margin-top: 20px;
+}
+.creatorsList span{
+    color: #ffffff;
+}
+.creatorRow{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

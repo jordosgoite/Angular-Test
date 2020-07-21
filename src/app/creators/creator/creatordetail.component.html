@@ -13,7 +13,7 @@
             *ngFor="let comic of creatorDetailComics | async" style="padding: 5px;">
                 <div class="comicsList">
                     <div class="element">
-                        <img class="thumbnail" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">
+                        <a [routerLink]="['/comics',comic.id]" target="" fxFlex mat-flat-button color="primary"><img class="thumbnail" src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}"></a>
                     </div>
                     <div class="element">{{comic.title}}</div>
                     <div class="element">{{comic.prices[0].price}}$</div>

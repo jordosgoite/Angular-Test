@@ -18,13 +18,13 @@ export class CharacterDetailComponent implements OnInit {
   characterId: string;
   characterDetail: Observable<any>;
   characterDetailComics: Observable<any>;
-  alleditors=Array;
-
+  characterDetailSeries: Observable<any>;
  
   ngOnInit() {
     console.log(this._route.snapshot.paramMap.get('id'));
     this.getCharacters(); 
     this.getCharactersComics();
+    this.getCharactersSeries();
   }
   getCharacters() {
     this.characterId = this._route.snapshot.paramMap.get('id');
@@ -34,6 +34,9 @@ export class CharacterDetailComponent implements OnInit {
   getCharactersComics() {
     this.characterId = this._route.snapshot.paramMap.get('id');
     this.characterDetailComics = this.comicsSvc.getCharacterComics(this.characterId);
-
+  }
+  getCharactersSeries() {
+    this.characterId = this._route.snapshot.paramMap.get('id');
+    this.characterDetailSeries = this.comicsSvc.getCharacterSeries(this.characterId);
   }
 }

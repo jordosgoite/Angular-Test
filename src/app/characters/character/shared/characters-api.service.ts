@@ -39,4 +39,13 @@ export class CharactersApiService {
     .pipe(map((data:any) => data.data.results)
     )
   }
+  getCharacterSeries (creatorId:string): Observable<CharactersComponent>{
+    const url_characterSeries = 'https://gateway.marvel.com:443/v1/public/characters';
+    const url_creatorId = creatorId;
+    const url_key = 'series?ts=1&apikey=1607336a86d386d6990a2518297c8e73&hash=4ba62a449c1e73ddd105d99bb5279dc1';
+    const url =  `${url_characterSeries}/${url_creatorId}/${url_key}`;
+    return this.http.get<CharactersComponent>(url)
+    .pipe(map((data:any) => data.data.results)
+    )
+  }
 }

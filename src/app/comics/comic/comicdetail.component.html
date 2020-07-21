@@ -6,9 +6,29 @@
             <img mat-card-image src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}" alt="{{comic.title}}">      
             <p>{{comic.title}}</p>
             <mat-card-title><p>Description:</p>{{comic.description}}</mat-card-title>
-            <div *ngFor="let creators of comicDetail | async">
+            <!--
+               <div *ngFor="let creators of comicDetail | async">
                 <p>Los creadores son:</p>{{creators.item[0].name}}
+            </div> 
+            -->
+            <div class="characters">
+                <div class="charactersList">
+                    <span>Featuring:</span>
+                    <div *ngFor="let character of charactersComicDetail | async">
+                        <p>{{character.name}}</p>
+                        <a [routerLink]="['/characters',character.id]" target=""><img mat-card-image src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}" alt="{{character.name}}"></a>      
+                    </div>
+                </div>
             </div>
+            <div class="creators">
+                <div class="creatorsList">
+                    <span>Creators:</span>
+                    <div *ngFor="let creator of creatorsComicDetail | async" class="creatorRow">
+                        <a [routerLink]="['/creators',creator.id]" target=""><img mat-card-image src="{{creator.thumbnail.path}}.{{creator.thumbnail.extension}}" alt="{{creator.name}}"></a>      
+                        <p>{{creator.fullName}}</p>
+                    </div>
+                </div>
+            </div>       
         </div> 
     </div>
 </div>

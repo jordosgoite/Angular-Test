@@ -1,0 +1,20 @@
+<div class="imageDetail">
+    <div class="framework">
+        <a href="series"><span> Browse more series</span></a>
+            <div class="series"
+            *ngFor="let serie of serieDetail | async as data" style="padding: 5px;">
+                <div class="seriesList">
+                    <div class="element">
+                       <img class="thumbnail" src="{{serie.thumbnail.path}}.{{serie.thumbnail.extension}}" alt="{{serie.title}}">
+                    </div>
+                    <div class="element"><p>Title:</p>{{serie.title}}</div>
+                    <div class="element"><p>Starting Year:</p>{{serie.startYear}}</div>
+                    <div class="element"><p>Ending Year:</p>{{serie.endYear}}</div>
+                    <div class="element"  *ngIf="serie.rating !== ''"><p>Rate:</p>{{serie.rating}}</div>
+                    <div class="element" *ngIf="serie.rating == ''"><p>Rate:</p> Not Available</div>
+                    <div class="element"  *ngIf="serie.type !== ''"><p>Type:</p>{{serie.type}}</div>
+                    <div class="element" *ngIf="serie.type == ''"><p>Type:</p> Not Available</div>
+                </div>
+            </div>    
+    </div>
+</div>

@@ -33,6 +33,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PipesModule } from 'w-ng5';
 import { ComicDetailModule } from './comics/comic/comicdetail.module';
 import { CharacterDetailModule } from './characters/character/characterdetail.module';
+import { SerieDetailModule } from './series/serie/seriedetail.module';
 import { CreatorDetailModule } from './creators/creator/creatordetail.module'
 import { characterFilterPipe } from './characters/characters.pipe';
 import { comicsFilterPipe } from './comics/comics.pipe';
@@ -87,7 +88,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     PipesModule,
     ComicDetailModule,
     CharacterDetailModule,
-    CreatorDetailModule
+    CreatorDetailModule,
+    SerieDetailModule
   ],
   providers: [],
   bootstrap: [AppComponent]
