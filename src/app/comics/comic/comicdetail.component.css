@@ -38,6 +38,7 @@
     display: block;
     height: 154px;
     width: 150px;
+    margin: 0;
 }
 .charactersList p{
     color: #141b38;

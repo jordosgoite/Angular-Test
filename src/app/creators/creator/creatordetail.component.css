@@ -25,6 +25,16 @@
     height: 54px;
     width: 50px;
 }
+.seriesList{
+    display: flex;
+    flex-direction: row;
+}
+.series img
+{
+    display: inline-block;
+    height: 54px;
+    width: 50px;
+}
 .element {
     padding: 10px;
 }

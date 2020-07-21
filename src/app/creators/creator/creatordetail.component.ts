@@ -17,12 +17,14 @@ export class CreatorDetailComponent implements OnInit {
   creatorId: string;
   creatorDetail: Observable<any>;
   creatorDetailComics: Observable<any>;
+  serieDetailComics: Observable<any>;
 
  
   ngOnInit() {
     console.log(this._route.snapshot.paramMap.get('id'));
     this.getCreators();
     this.getCreatorsComics();
+    this.getCreatorsSeries();
   }
   getCreators() {
     this.creatorId = this._route.snapshot.paramMap.get('id');
@@ -31,5 +33,9 @@ export class CreatorDetailComponent implements OnInit {
   getCreatorsComics() {
     this.creatorId = this._route.snapshot.paramMap.get('id');
     this.creatorDetailComics = this.creatorsSvc.getCreatorComics(this.creatorId);
+  }
+  getCreatorsSeries() {
+    this.creatorId = this._route.snapshot.paramMap.get('id');
+    this.serieDetailComics = this.creatorsSvc.getCreatorSerie(this.creatorId);
   }
 }

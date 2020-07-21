@@ -17,7 +17,18 @@
                     </div>
                     <div class="element">{{comic.title}}</div>
                     <div class="element">{{comic.prices[0].price}}$</div>
-                    <!--   Falta el rol en cada comic-->
+                </div>
+            </div>
+            <p>List of series:</p>
+            <div class="series"
+            *ngFor="let serie of serieDetailComics | async" style="padding: 5px;">
+                <div class="seriesList">
+                    <div class="element">
+                        <a [routerLink]="['/series',serie.id]" target="" fxFlex mat-flat-button color="primary"><img class="thumbnail" src="{{serie.thumbnail.path}}.{{serie.thumbnail.extension}}" alt="{{serie.title}}"></a>
+                    </div>
+                    <div class="element">{{serie.title}}</div>
+                    <div class="element">{{serie.type}}</div>
+                    <div class="element">{{serie.rating}}</div>
                 </div>
             </div>
         </div>
