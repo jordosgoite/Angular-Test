@@ -8,13 +8,18 @@ import { isNgTemplate } from '@angular/compiler';
 })
 export class ComicComponent implements OnInit {
 @Input() comic: any;
-role:string;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   filterByRol(arr, rol){
-   return arr.filter((item)=>item.role==rol);
+    const result =arr.find((item)=>item.role==rol);
+    if ( result !== undefined){
+      const resultf = (Object.entries(result));
+      console.log(resultf[1].slice(1, 2));
+      return resultf[1].slice(1, 2);
+    }
   }
 }

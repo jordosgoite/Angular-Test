@@ -29,6 +29,7 @@ export class CreatorDetailComponent implements OnInit {
   getCreators() {
     this.creatorId = this._route.snapshot.paramMap.get('id');
     this.creatorDetail = this.creatorsSvc.getCreator(this.creatorId);
+    console.log(this.creatorDetail);
   }
   getCreatorsComics() {
     this.creatorId = this._route.snapshot.paramMap.get('id');
@@ -37,5 +38,8 @@ export class CreatorDetailComponent implements OnInit {
   getCreatorsSeries() {
     this.creatorId = this._route.snapshot.paramMap.get('id');
     this.serieDetailComics = this.creatorsSvc.getCreatorSerie(this.creatorId);
+  }
+  filterByName(arr, name){
+    return arr.filter((item)=>item.name==name);
   }
 }

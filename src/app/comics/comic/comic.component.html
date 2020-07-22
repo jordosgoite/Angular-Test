@@ -5,13 +5,10 @@
   <mat-card-footer>
     <a [routerLink]="['/comics',comic.id]" target="" fxFlex mat-flat-button color="primary">See more</a>
   </mat-card-footer>
-  <mat-card-title *ngIf="filterByRol(comic.creators.items, 'editor').length > 0">
-    Editor<span
-      *ngIf="filterByRol(comic.creators.items, 'editor').length > 1"
-      >s</span
-    >
-  </mat-card-title>
   <div *ngFor="let creator of filterByRol(comic.creators.items, 'editor')">
-    <mat-card-title>{{ creator.name }}</mat-card-title>
+    <mat-card-title>Editor: {{creator}}</mat-card-title>
+  </div>
+  <div *ngFor="let creator of filterByRol(comic.creators.items, 'writer')">
+    <mat-card-title>Writer: {{creator}}</mat-card-title>
   </div>
 </mat-card>
